@@ -8,16 +8,27 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/users",
         "index": "apps/users/src/index.html",
         "main": "apps/users/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/users/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/users/src/favicon.ico", "apps/users/src/assets"],
-        "styles": ["apps/users/src/styles.scss"],
+        "assets": [
+          "apps/users/src/favicon.ico",
+          "apps/users/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/users/src/styles.scss",
+          "node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -70,7 +81,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/users/jest.config.ts"
       }

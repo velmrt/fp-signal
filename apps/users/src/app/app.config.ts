@@ -1,7 +1,18 @@
 import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { API_URL } from '@projects/http';
 import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(appRoutes)],
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+    provideAnimationsAsync(),
+    {
+      provide: API_URL,
+      useValue: 'https://jsonplaceholder.typicode.com',
+    }, provideAnimationsAsync(),
+  ],
 };

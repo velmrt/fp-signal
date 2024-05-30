@@ -1,0 +1,12 @@
+@if (!store.isLoading()) {
+  <users-list
+    [users]="store.usersEntities()"
+    (deleteUser)="deleteUser($event)"
+    (editUser)="editUser($event, true)"
+  />
+  <div class="button">
+    <users-create-button (addUserEvent)="addUser(false)" />
+  </div>
+} @else {
+  <mat-progress-bar color="accent" mode="indeterminate"></mat-progress-bar>
+}
